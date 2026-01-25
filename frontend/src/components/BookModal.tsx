@@ -127,7 +127,7 @@ export function BookModal({ bookId, onClose }: BookModalProps) {
 
   const handleAvailability = () => {
     updateAvailabilityMutation.mutate(bookId);
-  }
+  };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -232,7 +232,7 @@ export function BookModal({ bookId, onClose }: BookModalProps) {
                 <button
                   onClick={handleDelete}
                   disabled={deleteMutation.isPending}
-                  className="flex flex-1 items-center justify-center gap-2 bg-red-50 text-red-600 px-4 py-3 rounded-lg hover:bg-red-100 transition-colors font-medium disabled:opacity-50 cursor-pointer"
+                  className="flex flex-1 items-center justify-center gap-2 bg-red-100 text-red-600 px-4 py-3 rounded-lg hover:bg-red-200 transition-colors font-medium disabled:opacity-50 cursor-pointer"
                 >
                   <Trash2 className="w-4 h-4" />
                   Delete
@@ -240,12 +240,10 @@ export function BookModal({ bookId, onClose }: BookModalProps) {
                 <button
                   onClick={handleAvailability}
                   disabled={updateAvailabilityMutation.isPending}
-                  className="flex flex-1 items-center justify-center gap-2 px-4 py-3 rounded-lg transition-colors font-medium cursor-pointer"
-                  style={{
-                    color: book.isAvailable ? "#16a34a" : "#ea580c",
-                    backgroundColor: book.isAvailable ? "#d1fae5" : "#ffedd5",
-                  }}
-                  title={book.isAvailable ? "Click to rent out" : "Click to return"}
+                  className={`flex flex-1 items-center justify-center gap-2 px-4 py-3 rounded-lg transition-colors font-medium cursor-pointer ${book.isAvailable ? "bg-green-100 text-green-600 hover:bg-green-200" : "bg-orange-100 text-orange-600 hover:bg-orange-200"}`}
+                  title={
+                    book.isAvailable ? "Click to rent out" : "Click to return"
+                  }
                 >
                   {book.isAvailable ? (
                     <>

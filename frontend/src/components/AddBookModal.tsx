@@ -31,6 +31,7 @@ export function AddBookModal({ onClose }: AddBookModalProps) {
     year: new Date().getFullYear(),
     category: '',
     pageCount: 0,
+    isAvailable: true,
   });
 
   const createMutation = useMutation({

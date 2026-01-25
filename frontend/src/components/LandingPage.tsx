@@ -1,6 +1,6 @@
-import { useNavigate } from 'react-router-dom';
-import { BookOpen, ArrowRight } from 'lucide-react';
-import { ImageWithFallback } from './ImageWithFallback';
+import { useNavigate } from "react-router-dom";
+import { BookOpen, ArrowRight } from "lucide-react";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 export function LandingPage() {
   const navigate = useNavigate();
@@ -22,18 +22,18 @@ export function LandingPage() {
         <div className="flex justify-center mb-6">
           <BookOpen className="w-20 h-20 text-white" strokeWidth={1.5} />
         </div>
-        
+
         <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
           Library Management System
         </h1>
-        
+
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl mx-auto">
-          Organize, manage, and explore your entire book collection with ease. 
-          A modern solution for efficient library management.
+          Organize, manage, and explore your entire book collection with ease. A
+          modern solution for efficient library management.
         </p>
 
         <button
-          onClick={() => navigate('/books')}
+          onClick={() => navigate("/books")}
           className="group inline-flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 cursor-pointer"
         >
           View All Books
