@@ -70,7 +70,7 @@ export function AddBookModal({ onClose }: AddBookModalProps) {
           <h2 className="text-2xl font-bold text-gray-900">Add New Book</h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>

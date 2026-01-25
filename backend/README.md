@@ -8,6 +8,7 @@
 | GET    | `/api/books`      | Get all books  |
 | GET    | `/api/books/{id}` | Get book by ID |
 | PUT    | `/api/books/{id}` | Update book    |
+| PUT    | `/api/books/{id}/availability`     | Update book availability status   |
 | DELETE | `/api/books/{id}` | Delete book    |
 
 ## Usage

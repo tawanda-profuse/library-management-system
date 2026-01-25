@@ -49,16 +49,13 @@ public class BookController {
     }
 
     // UPDATE Availability
-    // public Book updateBookAvailability(@PathVariable Long id, @RequestBody Book updatedBook){
-    //     return repository.findById(id).map(book -> {
-    //         if(book.getAvailability()){
-    //             book.setAvailability(false)
-    //         } else {
-    //             book.setAvailability(true)
-    //         }
-    //         return repository.save(book);
-    //     }).orElse(null);
-    // }
+    @PutMapping("/{id}/availability")
+    public Book toggleAvailability(@PathVariable Long id){
+        return repository.findById(id).map(book -> {
+            book.setIsAvailable(!book.getIsAvailable());
+            return repository.save(book);
+        }).orElseThrow(() -> new RuntimeException("Book not found"));
+    }
 
     // DELETE
     @DeleteMapping("/{id}")

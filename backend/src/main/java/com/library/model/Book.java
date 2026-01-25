@@ -15,7 +15,9 @@ public class Book {
     private int year;
     private String category;
     private int pageCount;
-    // private Boolean isAvailable:
+
+    @Column(name = "is_available", nullable = false)
+    private Boolean isAvailable = true;
 
     // Getters and Setters
     public Long getId() { return id; }
@@ -36,6 +38,6 @@ public class Book {
     public int getPageCount() { return pageCount; }
     public void setPageCount(int pageCount) { this.pageCount = pageCount; }
 
-    // public bool getAvailability() { return isAvailable; }
-    // public void setAvailability(Bool isAvailable) {this.isAvailable = isAvailable}
+    public Boolean getIsAvailable() { return isAvailable; }
+    public void setIsAvailable(Boolean isAvailable) {this.isAvailable = isAvailable;}
 }
