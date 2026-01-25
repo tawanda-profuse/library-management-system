@@ -800,6 +800,10 @@
   .bg-red-50 {
     background-color: var(--color-red-50);
   }
+  
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
 
   .bg-white {
     background-color: var(--color-white);

@@ -1,5 +1,12 @@
-import { Book as BookIcon, Calendar, FileText, Tag } from 'lucide-react';
-import { Book } from './BooksPage';
+import {
+  Book as BookIcon,
+  Calendar,
+  CheckCircle,
+  FileText,
+  Tag,
+  X,
+} from "lucide-react";
+import { Book } from "./BooksPage";
 
 interface BookCardProps {
   book: Book;
@@ -18,7 +25,9 @@ export function BookCard({ book, onClick }: BookCardProps) {
           <BookIcon className="w-6 h-6 text-blue-600" />
         </div>
         <div className="bg-gray-50 px-3 py-1 rounded-full">
-          <span className="text-xs font-medium text-gray-600">{book.category}</span>
+          <span className="text-xs font-medium text-gray-600">
+            {book.category}
+          </span>
         </div>
       </div>
 
@@ -37,6 +46,19 @@ export function BookCard({ book, onClick }: BookCardProps) {
         <div className="flex items-center gap-2">
           <FileText className="w-4 h-4" />
           <span>{book.pageCount} pages</span>
+        </div>
+        <div className={`flex items-center gap-2 ${book.isAvailable ? 'text-green-600' : 'text-red-600'}`}>
+          {book.isAvailable ? (
+            <>
+              <span>Available</span>
+              <CheckCircle className="w-4 h-4" />
+            </>
+          ) : (
+            <>
+              <span>Unavailable</span>
+              <X className="w-4 h-4" />
+            </>
+          )}
         </div>
       </div>
 

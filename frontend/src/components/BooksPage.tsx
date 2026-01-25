@@ -13,6 +13,7 @@ export interface Book {
   year: number;
   category: string;
   pageCount: number;
+  isAvailable: boolean;
 }
 
 async function fetchBooks(): Promise<Book[]> {
